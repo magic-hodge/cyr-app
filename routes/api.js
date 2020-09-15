@@ -17,39 +17,39 @@ router.get('/', (req, res) => {
         });
 });
 
-router.get('/one', (req, res) => {
+// router.get('/one', (req, res) => {
 
-    Feedback.find({ })
-        .then((data) => {
-            console.log('Data: ', data);
-            res.json(data);
-        })
-        .catch((err) => {
-            console.log('Error: ', err);
-        });
-});
+//     Feedback.find({ })
+//         .then((data) => {
+//             console.log('Data: ', data);
+//             res.json(data);
+//         })
+//         .catch((err) => {
+//             console.log('Error: ', err);
+//         });
+// });
 
-router.get('/two', (req, res) => {
-    const data = {
-        student:"Ivy Drips",
-        skill:"Coins",
-        praise:"Does 2/3!",
-        feedback:"Complete 2nd-half."
-    }
-    res.json(data);
-    const test = db.feedbacks.find({});
-    console.log(test);
-});
+// router.get('/two', (req, res) => {
+//     const data = {
+//         student:"Ivy Drips",
+//         skill:"Coins",
+//         praise:"Does 2/3!",
+//         feedback:"Complete 2nd-half."
+//     }
+//     res.json(data);
+//     const test = db.feedbacks.find({});
+//     console.log(test);
+// });
 
-router.get('/three', (req, res) => {
-    const data = {
-        student:"Kid Circus",
-        skill:"1-Arm Rodeos",
-        praise:"E-Z!",
-        feedback:"Switch hands."
-    }
-    res.json(data);
-});
+// router.get('/three', (req, res) => {
+//     const data = {
+//         student:"Kid Circus",
+//         skill:"1-Arm Rodeos",
+//         praise:"E-Z!",
+//         feedback:"Switch hands."
+//     }
+//     res.json(data);
+// });
 
 router.post('/save', (req, res) => {
 
