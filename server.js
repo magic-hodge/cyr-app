@@ -38,8 +38,8 @@ app.use('/api', routes);
 
 // Setting to production for deployment on Heroku.
 
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('client/build'))
-}
+// if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/build'));
+// }
 
 app.listen(PORT, console.log(`Server running on ${PORT}.`));
