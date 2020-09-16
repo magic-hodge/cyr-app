@@ -16,7 +16,7 @@ const routes = require('./routes/api');
 // const MONGODB_URI = 'mongodb+srv://coachNick:iMagic99@feedbackdb.wakmd.mongodb.net/feedbackDB?retryWrites=true&w=majority';
 // mongoose.connect(MONGODB_URI || 'mongodb://localhost/feedbackDB', {
 
-mongoose.connect('mongodb://localhost/feedbackDB', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/feedbackDB', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
@@ -35,5 +35,11 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(morgan('tiny'));
 app.use('/api', routes);
+
+// Setting to production for deployment on Heroku.
+
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/build'))
+}
 
 app.listen(PORT, console.log(`Server running on ${PORT}.`));
